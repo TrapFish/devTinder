@@ -1,0 +1,3 @@
+https://daisyui.com/components/footer/
+
+https://tailwindcss.com/docs/text-underline-offset
