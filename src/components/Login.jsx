@@ -23,10 +23,8 @@ const Login = () => {
 
     const handleSubmit = async () => {
         try {
-            console.log("Line 17 ::", login);
             const res = await axios.post(`${BASE_URL}/login`, login, { withCredentials: true });
-            console.log("Line 20 ::", res);
-            dispatch(addUser(res?.data));
+            dispatch(addUser(res?.data?.userData));
             navigate('/feed')
         } catch (error) {
             console.log("Error ::", error)
