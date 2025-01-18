@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const user = useSelector(state => state.user);
-  console.log("Line 6 ::", user)
     return (
         <>
           <div className="navbar bg-base-300">
