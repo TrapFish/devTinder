@@ -6,7 +6,6 @@ const feedSlice = createSlice({
     initialState: null,
     reducers: {
         addFeed: (state, action)=>{
-            console.log("lIne 9 :====", action)
             return action.payload;
         },
         removeFeed:(state, action) => {

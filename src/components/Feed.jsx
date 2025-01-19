@@ -7,15 +7,12 @@ import UserCard from './UserCard';
 
 const Feed = () => {
     const feed = useSelector(store=> store.feed);
-    console.log("Line 10 ::", feed)
-    // const [feedUser, setFeedUser] = useState()
     const dispatch = useDispatch();
 
     const getFeed = async () => {
         if(feed) return;
         try {
             const res = await axios.get(`${BASE_URL}/user/feed`,{withCredentials: true});
-            console.log("Line 9 ::", res)
             dispatch(addFeed(res?.data));
         } catch (error) {
             console.log("Line 11::", error)

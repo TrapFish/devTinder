@@ -1,7 +1,6 @@
 import React from 'react';
 
 const UserCard = ({ user }) => {
-    console.log("Line 21221", user)
     return (
         <>
             <div className="card bg-base-100 w-96 shadow-xl">
