@@ -18,7 +18,7 @@ const UserCard = ({ user }) => {
                             <ul className="pr-4 list-disc">
                                 {user?.skills.map((skill, index) => {
                                     return (
-                                        <React.Fragment>
+                                        <React.Fragment key={index}>
                                             <li>{skill}</li>
                                         </React.Fragment>
                                     )
