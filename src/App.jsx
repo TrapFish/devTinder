@@ -6,6 +6,8 @@ import Error from './components/Error';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore';
+import Connections from './components/Connections.jsx';
+import Request from './components/Request';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
               <Route path="/feed" element={<><Feed /></>} />
               <Route path="/profile" element={<><Profile /></>} />
               <Route path="/error" element={<><Error /></>} />
+              <Route path="/connections" element={<><Connections /></>}/>
+              <Route path="/requests" element={<><Request /></>}/>
             </Route>
           </Routes>
         </BrowserRouter>
