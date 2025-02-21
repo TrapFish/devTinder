@@ -8,6 +8,14 @@ const Connections = () => {
     const connections = useSelector(state => state.connection);
     const dispatch = useDispatch();
 
+    const reviewRequest = async (status, _id) => {
+        try {
+            const res = await axios.post(`${BASE_URL}/request/review/${status}/${_id}`, {}, {withCredentials: true})
+        } catch (error) {
+            
+        }
+    }
+
     const fetchConnections = async ()=>{
         try {
            const res = await axios.get(`${BASE_URL}/user/connections`, {withCredentials: true});
@@ -41,8 +49,8 @@ const Connections = () => {
                       <p>{about}</p>
                       </div>
                       <div>
-                      <button className="btn btn-primary">Select</button>
-                      <button className="btn btn-secondary">Reject</button>
+                      <button className="btn btn-primary"onClick={()=>{reviewRequest("accepted", connect._id)}}>Select</button>
+                      <button className="btn btn-secondary" onClick={()=>{reviewRequest("rejected", connect._id)}}>Reject</button>
                       </div>
                     </div>
                  )
