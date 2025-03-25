@@ -48,7 +48,9 @@ Currently, two official plugins are available:
       9. pm2 start npm --name "DevBackEnd" --start   ==> here we are giving our own process name 
       10. config nginx - /etc/nginx/sites-available/default --- "sudo nano /etc/nginx/sites-available/default"
       11. restart nginx -- sudo systemctl restart nginx   
+  
 
+  Modify the base url in frontend projct
       
       FrontEnd :+1: http://13.51.13.44/
       BackEnd  : 👍: http://13.51.13.44:3000/

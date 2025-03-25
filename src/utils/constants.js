@@ -1,4 +1,5 @@
-export const BASE_URL = "http://localhost:3000";
+// export const BASE_URL = "http://localhost:3000";
+export const BASE_URL = "/api";
 
 export const ALERT_TYPE = [
       {messageType: "success", dvalue: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"},
