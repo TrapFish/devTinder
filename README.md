@@ -27,9 +27,48 @@ Currently, two official plugins are available:
 			   -- in devTinder folder in AWS run /var/www/html/
 			   -- to copy the code from dist folder in the devTinder to the /var/www/html -- Command is --- "sudo scp -r dist/* /var/www/html"
 			8. Enable port 80 of your web server
+   
+   -- Backend 
+       1. npm install --> depencies installed
 			
 			   
+ "scripts": {
+    "start": "node src/app.js", //===> Production
+    "dev": "nodemon src/app.js"//development mode //===> Development
+  }
+
+      2. allowed ec2 instance public IP on mongodb server
+      3. installed PM2 -- npm install pm2 -g
+      4. pm2 start npm -- start
+      5. pm2 logs 
+      6. to clear the logs === pm2 flush npm
+      7. pm2 stop npm 
+      8. pm2 delete npm 
+         === pm2 list , pm2 flush <process name>, pm2 stop <process name> , pm2 delete <process name>
+      9. pm2 start npm --name "DevBackEnd" --start   ==> here we are giving our own process name 
+      10. config nginx - /etc/nginx/sites-available/default --- "sudo nano /etc/nginx/sites-available/default"
+      11. restart nginx -- sudo systemctl restart nginx   
+
+      
+      FrontEnd :+1: http://13.51.13.44/
+      BackEnd  : 👍: http://13.51.13.44:3000/
+
 	open the instance and run the command
+
+
+   nginx config::
+
+   server_name 13.51.13.44;
+    location /api/ {
+            proxy_pass http://127.0.0.1:3000/; # Notice the trailing slash
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
 	 
 	 Verify Public IP Address:
 
